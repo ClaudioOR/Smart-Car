@@ -10,7 +10,7 @@ Projekt installieren und ausfuehren:
 ------------------------------------
 
 -> Zum Ausfuehren MS Visual Studio 2015 Community herunterladen: https://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx
--> Dann Repo klonen und die Datei 'Smart Car.sln' im Ordner 'Smart Car' ausfuehren
+-> Dann Repo klonen oder herunterladen und die Datei 'Smart Car.sln' im Ordner 'Smart Car' ausfuehren
 -> Projekt mit 'Strg + F5' builden und starten
 => Sollte es nicht auf anhieb funktionieren, dann schreib mich an ;)
 
