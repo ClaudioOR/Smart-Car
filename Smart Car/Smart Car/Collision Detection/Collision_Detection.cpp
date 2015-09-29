@@ -3,6 +3,7 @@
 //Macros
 #define MIN(A, B)	((A) < (B) ? (A) : (B))
 #define MAX(A, B)	((A) > (B) ? (A) : (B))
+#define SIGN(A)		((A) < (0) ? (-1) : (1))
 
 /*Easy Line Intersection Algorithm. Not for 3D!*/
 bool intersectTriangles(std::vector<Rendering::VertexFormat>& vertsA, glm::mat4& modelA, std::vector<Rendering::VertexFormat>& vertsB, glm::mat4& modelB) {
@@ -27,7 +28,7 @@ bool intersectTriangles(std::vector<Rendering::VertexFormat>& vertsA, glm::mat4&
 		vA[3] = vA[0];
 		//Iterate through all Lines of current Triangle A
 		for (int jA = 0; jA < 3; jA++) {
-			//Find Line Equation: A0*x + B0*x = C0, using Points vA[jA] and vA[jA+1]
+			//Find Line Equation: A0*x + B0*y = C0, using Points vA[jA] and vA[jA+1]
 			A0 = vA[jA + 1].y - vA[jA].y;
 			B0 = vA[jA].x - vA[jA + 1].x;
 			C0 = A0*vA[jA].x + B0*vA[jA].y;
@@ -75,4 +76,45 @@ bool intersectTriangles(std::vector<Rendering::VertexFormat>& vertsA, glm::mat4&
 		}
 	}
 	return false;
+}
+
+/*'ray_pos' and 'ray_dir' expected to be normalized*/
+float intersectRayTriangles(glm::vec4& ray_pos, glm::vec4& ray_dir, glm::mat4& modelMat, std::vector<Rendering::VertexFormat>& verts) {
+	//Definitions
+	glm::vec4 t[3];
+	glm::vec2 a[4], v1, v2;
+	float t1, t2, det;
+	float t_nearest = FLT_MAX;
+	//Define v3
+	glm::vec2 v3(-ray_dir.y, ray_dir.x);
+	//Iterate through all Triangles in 'verts'
+	for (int i = 0; i < verts.size(); i += 3) {
+		//Define t0, t1 and t2 (Transformed Vertices)
+		t[0] = modelMat * verts[i].position;
+		t[1] = modelMat * verts[i + 1].position;
+		t[2] = modelMat * verts[i + 2].position;
+		//Define a0, a1 and a2
+		a[0] = glm::vec2(t[0].x, t[0].y);
+		a[1] = glm::vec2(t[1].x, t[1].y);
+		a[2] = glm::vec2(t[2].x, t[2].y);
+		a[3] = a[0];
+		//Iterate through all Line-Segments of current Triangle
+		for (int j = 0; j < 3; j++) {	//Current Line-Seqment defined From a[j] to a[j+1]
+			//Define v1 and v2
+			v1 = glm::vec2(ray_pos.x, ray_pos.y) - a[j];
+			v2 = a[j + 1] - a[j];
+			//Find t1 and t2
+			det = v2.x*v1.y - v2.y*v1.x;
+			t1 = (SIGN(det)*glm::length(det)) / glm::dot(v2, v3);
+			t2 = glm::dot(v1, v3) / glm::dot(v2, v3);
+			//Check for Collision
+			if (t1 >= 0 && t2 >= 0 && t2 <= 1) {
+				//Lines intersected)			
+				if (t1 < t_nearest) 
+					t_nearest = t1;
+			}
+		}		
+	}
+	//Return t of nearest Intersection
+	return t_nearest; 
 }

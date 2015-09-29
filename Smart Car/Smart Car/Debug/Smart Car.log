@@ -1,12 +1,16 @@
-﻿Build started 02.09.2015 18:08:11.
+﻿Build started 26.09.2015 19:45:30.
      1>Project "D:\Projekte\Smart Car\Smart Car\Smart Car\Smart Car.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Programme\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"D:\Projekte\Smart Car\Smart Car\packages\glm.0.9.6.3\build\native\../..//build/native/include/" /I"D:\Projekte\Smart Car\Packages\freeglut\include" /I"D:\Projekte\Smart Car\Packages\glew-1.11.0\include" /I"D:\Projekte\Smart Car\Packages\Simple OpenGL Image Library\src" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "Game Logic\Game_Logic.cpp"
          Game_Logic.cpp
-     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(31): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(52): warning C4305: 'initializing': truncation from 'double' to 'float'
-     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(53): warning C4305: 'initializing': truncation from 'double' to 'float'
-     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(77): warning C4305: 'initializing': truncation from 'double' to 'float'
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(81): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(90): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(126): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(131): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(153): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(174): warning C4305: 'initializing': truncation from 'double' to 'float'
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(175): warning C4305: 'initializing': truncation from 'double' to 'float'
+     1>d:\projekte\smart car\smart car\smart car\game logic\game_logic.cpp(205): warning C4305: 'initializing': truncation from 'double' to 'float'
        Link:
          D:\Programme\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Projekte\Smart Car\Smart Car\Debug\Smart Car.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Projekte\Smart Car\Packages\freeglut\lib" /LIBPATH:"D:\Projekte\Smart Car\Packages\glew-1.11.0\lib" /LIBPATH:"D:\Projekte\Smart Car\Packages\Simple OpenGL Image Library\lib" freeglut.lib glew32.lib SOIL.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Projekte\Smart Car\Smart Car\Debug\Smart Car.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Projekte\Smart Car\Smart Car\Debug\Smart Car.lib" /MACHINE:X86 Debug\Collision_Detection.obj
          Debug\EventHandler.obj
@@ -26,4 +30,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.09
+Time Elapsed 00:00:01.21

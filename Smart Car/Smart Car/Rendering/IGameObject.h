@@ -19,6 +19,7 @@ namespace Rendering {
 		virtual void Draw() = 0;
 		virtual void Update(float dt) = 0;
 		virtual void SetProgram(GLuint shaderName) = 0;
+		virtual GLuint GetProgram() = 0;
 		virtual void Destroy() = 0;
 		virtual void setEventHandler(EventHandler* eh) = 0;
 		virtual void setCamera(Camera* cam) = 0;

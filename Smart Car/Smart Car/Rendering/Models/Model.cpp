@@ -21,6 +21,10 @@ void Model::SetProgram(GLuint program) {
 	this->program = program;
 }
 
+GLuint Model::GetProgram() {
+	return this->program;
+}
+
 void Model::setEventHandler(EventHandler* eh) {
 	this->input = eh;
 }

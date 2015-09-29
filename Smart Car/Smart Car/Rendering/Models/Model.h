@@ -15,6 +15,7 @@ namespace Rendering {
 			virtual void Draw() override;
 			virtual void Update(float dt) override;
 			virtual void SetProgram(GLuint shaderName) override;
+			virtual GLuint GetProgram() override;
 			virtual void Destroy() override;
 			virtual void setEventHandler(EventHandler* eh) override;
 			virtual void setCamera(Camera* cam) override;

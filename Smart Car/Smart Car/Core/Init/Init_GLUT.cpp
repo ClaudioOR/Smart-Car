@@ -48,7 +48,6 @@ void Init_GLUT::init(const Core::WindowInfo& windowInfo, const Core::ContextInfo
 }
 
 void Init_GLUT::run() {
-	std::cout << "GLUT:\tStart Running Smart-Car Framework\n" << std::endl;
 	glutMainLoop();
 }
 
